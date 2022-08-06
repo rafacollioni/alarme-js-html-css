@@ -1,5 +1,7 @@
 const selectOpcoes = document.querySelectorAll('select');
-const horaAtual = document.querySelector('h1')
+const horaAtual = document.querySelector('h1');
+const btnAlarm = document.querySelector('button');
+const seletores = document.querySelector('.flexoptions');
 
 for (let i = 12; i > 0; i--) {
     i = i < 10 ? "0" + i : i;
@@ -48,3 +50,22 @@ setInterval(() =>{
 
     // console.log(`${h}:${m}:${s} ${session}`)
 }, 1000)
+
+
+btnAlarm.addEventListener("click", setAlarm)
+
+function setAlarm(){
+    
+    let time = `${selectOpcoes[0].value}:${selectOpcoes[1].value}:${selectOpcoes[2].value}`;
+    
+    if (time.includes("Horas") || time.includes("Minutos") || time.includes("AM/PM")){
+        return alert("Você precisa selecionar a hora desejada!")
+    }else{
+
+    }
+
+
+
+}
+
+console.log(seletores)
