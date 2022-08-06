@@ -5,6 +5,11 @@ const seletores = document.querySelector('.flexoptions');
 
 var alarmTime;
 
+let ringtone = new Audio("./assets/alarme.mp3")
+
+let isAlarmSet = false;
+
+
 for (let i = 12; i > 0; i--) {
     i = i < 10 ? "0" + i : i;
     let option = `<option value="${i}">${i}</option>`;
@@ -43,9 +48,13 @@ setInterval(() =>{
     h = (h < 10) ? "0" + h : h;
     m = (m < 10) ? "0" + m : m;
     s = (s < 10) ? "0" + s : s;
+
+
     horaAtual.innerText = `${h}:${m}:${s} ${session}` 
+
     if(alarmTime == `${h}:${m}:${session}`){
-        console.log("oi")
+        ringtone.play();
+        ringtone.loop = true;
     }
 
 
@@ -57,15 +66,27 @@ setInterval(() =>{
 btnAlarm.addEventListener("click", setAlarm)
 
 function setAlarm(){
-    
+    if (isAlarmSet){ 
+    seletores.classList.remove("disable")
+    btnAlarm.innerHTML = "Começar Alarme"
+    alarmTime = "";
+    ringtone.pause()
+    return isAlarmSet = false
+    }
+
     let time = `${selectOpcoes[0].value}:${selectOpcoes[1].value}:${selectOpcoes[2].value}`;
     
     if (time.includes("Horas") || time.includes("Minutos") || time.includes("AM/PM")){
         return alert("Você precisa selecionar a hora desejada!")
     }
+    isAlarmSet = true
     alarmTime = time;
     seletores.classList.add("disable");
     btnAlarm.innerText = "Resetar o Alarme"
+    
+
+    // Desabilita os Botões quando o Alarme Está Ativado, criando uma class e desabilitando no CSS
+
 
     }
 
