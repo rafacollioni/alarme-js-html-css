@@ -3,6 +3,8 @@ const horaAtual = document.querySelector('h1');
 const btnAlarm = document.querySelector('button');
 const seletores = document.querySelector('.flexoptions');
 
+var alarmTime;
+
 for (let i = 12; i > 0; i--) {
     i = i < 10 ? "0" + i : i;
     let option = `<option value="${i}">${i}</option>`;
@@ -31,23 +33,23 @@ setInterval(() =>{
     let m = date.getMinutes(); // 0 - 59
     let s = date.getSeconds(); // 0 - 59
     let session = "AM";
-    
     if(h == 0){
-        h = 12;
-    }
-    
+        h = 12;}
+
     if(h > 12){
         h = h - 12;
         session = "PM";
     }
-    
     h = (h < 10) ? "0" + h : h;
     m = (m < 10) ? "0" + m : m;
     s = (s < 10) ? "0" + s : s;
-
     horaAtual.innerText = `${h}:${m}:${s} ${session}` 
+    if(alarmTime == `${h}:${m}:${session}`){
+        console.log("oi")
+    }
 
 
+    
     // console.log(`${h}:${m}:${s} ${session}`)
 }, 1000)
 
@@ -60,12 +62,12 @@ function setAlarm(){
     
     if (time.includes("Horas") || time.includes("Minutos") || time.includes("AM/PM")){
         return alert("Você precisa selecionar a hora desejada!")
-    }else{
+    }
+    alarmTime = time;
+    seletores.classList.add("disable");
+    btnAlarm.innerText = "Resetar o Alarme"
 
     }
 
 
 
-}
-
-console.log(seletores)

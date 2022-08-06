@@ -50,6 +50,11 @@ button:hover{
     cursor: pointer;
 }
 
+.disable{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .flexoptions{
     width: 85%;
     flex-direction: row;
