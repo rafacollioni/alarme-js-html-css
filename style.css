@@ -1,6 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     border: none;
-    
+}
+
+body{
+    background-color: rgb(130, 82, 150);
+    font-family: 'Poppins', sans-serif;
+}
+
+.mainbox{
+    width: 500px;
+    height: 500px;
+    max-width: 80%;
+    aspect-ratio: 1/1;
+    background-color: #ffff;
+    margin: 6% auto;
+    border-radius: 15px;
+    box-shadow: -6px 6px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.clock{
+    width: 30%;
+    height: 30%;
+    margin: 5% auto;
+}
+
+.horas{
+    font-size: clamp(4rem, 4.6rem, 7rem);
+}
+
+button{
+    width: 85%;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    background-color:  rgb(192, 102, 231);
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+button:hover{
+    background-color:  rgb(134, 63, 164);
+    cursor: pointer;
+}
+
+.flexoptions{
+    width: 85%;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+select{
+    border: #000 solid 2px;
+    padding: 14px;
+    width: 32%;
+    border-radius: 6px;
 }

@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <script src="./index.js"></script>
+    <script defer src="index.js"></script>
     <title>Alarme</title>
 </head>
+
 <body>
 
     <main class="main">
+        <div class="mainbox">
+            <img class="clock" src="./images/alarmclockflat_106001.png" alt="alarme">
+            <h1 class="horas">xx:xx:xxpm</h1>
+            <div class="flexoptions">
+                <select class="select">
+                    <option value="Horas" selected hidden>Horas</option>
+                </select>
+                <select class="select">
+                    <option value="Minutos" selected hidden>Minutos</option>
+                </select>
+                <select class="select">
+                    <option value="AM/PM" selected hidden>AM/PM</option>
+                </select>
+            </div>
+            <button class="botão">Começar Alarme</button>
 
 
 
-
+        </div>
     </main>
 
 </body>
+
 </html>
